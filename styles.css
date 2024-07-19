@@ -1,0 +1,69 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; /* White background */
+    overflow: hidden;
+}
+
+.sonar-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.sonar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border: 5px solid transparent; /* Thicker border */
+    border-radius: 50%;
+    animation: sonar-animation 5s infinite;
+    animation-fill-mode: forwards;
+}
+
+/* Updated colors */
+.sonar:nth-child(1),
+.sonar:nth-child(4),
+.sonar:nth-child(7),
+.sonar:nth-child(10) {
+    border-color: #207BFF; /* Dark blue */
+}
+
+.sonar:nth-child(2),
+.sonar:nth-child(5),
+.sonar:nth-child(8),
+.sonar:nth-child(11) {
+    border-color: #4EA5FF; /* Light blue */
+}
+
+.sonar:nth-child(3),
+.sonar:nth-child(6),
+.sonar:nth-child(9),
+.sonar:nth-child(12) {
+    border-color: #F5F7FA; /* Very light blue/white */
+}
+
+@keyframes sonar-animation {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    50% {
+        width: 300px; /* Max size of the echo/sonar */
+        height: 300px; /* Max size of the echo/sonar */
+        opacity: 0.7;
+    }
+    100% {
+        width: 600px; /* Max size of the echo/sonar */
+        height: 600px; /* Max size of the echo/sonar */
+        opacity: 0;
+    }
+}
